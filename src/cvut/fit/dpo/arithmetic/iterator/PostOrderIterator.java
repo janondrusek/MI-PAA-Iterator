@@ -1,31 +1,49 @@
 package cvut.fit.dpo.arithmetic.iterator;
 
-import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
 
+import cvut.fit.dpo.arithmetic.elements.CloseBracketOperation;
 import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
+import cvut.fit.dpo.arithmetic.elements.Number;
+import cvut.fit.dpo.arithmetic.elements.OpenBracketOperation;
+import cvut.fit.dpo.arithmetic.operand.BinaryOperator;
 
-public class PostOrderIterator implements Iterator<ExpressionElement>
-{
+public class PostOrderIterator extends AbstractIterator {
 
-	@Override
-	public boolean hasNext()
-	{
-		// TODO Auto-generated method stub
-		return false;
+	public PostOrderIterator(BinaryOperator root) {
+		super(root);
 	}
 
 	@Override
-	public ExpressionElement next()
-	{
-		// TODO Auto-generated method stub
-		return null;
+	protected List<ExpressionElement> collectElements(BinaryOperator root) {
+		List<ExpressionElement> elements = new LinkedList<ExpressionElement>();
+		Stack<ExpressionElement> operators = new Stack<ExpressionElement>();
+
+		for (ExpressionElement element : root.getExpressionElements()) {
+			if (element instanceof Number) {
+				elements.add(element);
+			} else {
+				if (element instanceof CloseBracketOperation) {
+					while (!(operators.peek() instanceof OpenBracketOperation)) {
+						elements.add(operators.pop());
+					}
+					operators.pop();
+
+				} else {
+					operators.add(element);
+				}
+			}
+		}
+		elements.addAll(operators);
+
+		return elements;
 	}
 
 	@Override
-	public void remove()
-	{
-		// TODO Auto-generated method stub
-		
+	protected String getDelimiter() {
+		return " ";
 	}
 
 }

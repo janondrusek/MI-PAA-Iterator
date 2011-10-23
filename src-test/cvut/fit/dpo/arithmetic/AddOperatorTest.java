@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+import cvut.fit.dpo.arithmetic.operand.AddOperator;
+
 public class AddOperatorTest
 {
 	NumericOperand o1;

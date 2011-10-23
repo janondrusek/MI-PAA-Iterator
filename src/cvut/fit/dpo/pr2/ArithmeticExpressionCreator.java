@@ -1,10 +1,10 @@
 package cvut.fit.dpo.pr2;
 
-import cvut.fit.dpo.arithmetic.AddOperator;
 import cvut.fit.dpo.arithmetic.ArithmeticExpression;
-import cvut.fit.dpo.arithmetic.BinaryOperator;
 import cvut.fit.dpo.arithmetic.NumericOperand;
-import cvut.fit.dpo.arithmetic.SubstractOperator;
+import cvut.fit.dpo.arithmetic.operand.AddOperator;
+import cvut.fit.dpo.arithmetic.operand.BinaryOperator;
+import cvut.fit.dpo.arithmetic.operand.SubstractOperator;
 
 
 /**
