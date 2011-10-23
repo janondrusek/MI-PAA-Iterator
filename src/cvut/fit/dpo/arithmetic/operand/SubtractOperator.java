@@ -1,6 +1,5 @@
 package cvut.fit.dpo.arithmetic.operand;
 
-import cvut.fit.dpo.arithmetic.Operand;
 import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
 import cvut.fit.dpo.arithmetic.elements.SubstractOperation;
 
@@ -9,9 +8,9 @@ import cvut.fit.dpo.arithmetic.elements.SubstractOperation;
  * 
  * @author Jan Kurš
  */
-public class SubstractOperator extends BinaryOperator {
+public class SubtractOperator extends BinaryOperator {
 
-	public SubstractOperator(Operand firstOperand, Operand secondOperand) {
+	public SubtractOperator(Operand firstOperand, Operand secondOperand) {
 		super(firstOperand, secondOperand);
 	}
 

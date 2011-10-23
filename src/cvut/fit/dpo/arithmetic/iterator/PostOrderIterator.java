@@ -8,16 +8,16 @@ import cvut.fit.dpo.arithmetic.elements.CloseBracketOperation;
 import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
 import cvut.fit.dpo.arithmetic.elements.Number;
 import cvut.fit.dpo.arithmetic.elements.OpenBracketOperation;
-import cvut.fit.dpo.arithmetic.operand.BinaryOperator;
+import cvut.fit.dpo.arithmetic.operand.Operand;
 
 public class PostOrderIterator extends AbstractIterator {
 
-	public PostOrderIterator(BinaryOperator root) {
+	public PostOrderIterator(Operand root) {
 		super(root);
 	}
 
 	@Override
-	protected List<ExpressionElement> collectElements(BinaryOperator root) {
+	protected List<ExpressionElement> collectElements(Operand root) {
 		List<ExpressionElement> elements = new LinkedList<ExpressionElement>();
 		Stack<ExpressionElement> operators = new Stack<ExpressionElement>();
 

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
-import cvut.fit.dpo.arithmetic.operand.BinaryOperator;
+import cvut.fit.dpo.arithmetic.operand.Operand;
 
 abstract public class AbstractIterator implements Iterator<ExpressionElement> {
 
@@ -15,11 +15,11 @@ abstract public class AbstractIterator implements Iterator<ExpressionElement> {
 
 	private List<ExpressionElement> elements = new ArrayList<ExpressionElement>();
 
-	protected AbstractIterator(BinaryOperator root) {
+	protected AbstractIterator(Operand root) {
 		elements = collectElements(root);
 	}
 
-	abstract protected List<ExpressionElement> collectElements(BinaryOperator root);
+	abstract protected List<ExpressionElement> collectElements(Operand root);
 
 	private void rewind() {
 		current = 0;
@@ -41,7 +41,7 @@ abstract public class AbstractIterator implements Iterator<ExpressionElement> {
 
 	@Override
 	public void remove() {
-		elements.remove(current);
+		throw new UnsupportedOperationException("I don't support ExpressionElement removal!");
 	}
 
 	@Override

@@ -3,7 +3,6 @@ package cvut.fit.dpo.arithmetic.operand;
 import java.util.ArrayList;
 import java.util.List;
 
-import cvut.fit.dpo.arithmetic.Operand;
 import cvut.fit.dpo.arithmetic.elements.CloseBracketOperation;
 import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
 import cvut.fit.dpo.arithmetic.elements.OpenBracketOperation;
@@ -45,10 +44,7 @@ public abstract class BinaryOperator implements Operand {
 
 	@Override
 	public Integer evaluate() {
-		int val1 = getOperandValue(firstOperand);
-		int val2 = getOperandValue(secondOperand);
-
-		return evaluate(val1, val2);
+		return evaluate(getOperandValue(firstOperand), getOperandValue(secondOperand));
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import cvut.fit.dpo.arithmetic.operand.AddOperator;
+import cvut.fit.dpo.arithmetic.operand.NumericOperand;
 
 public class AddOperatorTest
 {

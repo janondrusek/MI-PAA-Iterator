@@ -1,6 +1,5 @@
 package cvut.fit.dpo.arithmetic.operand;
 
-import cvut.fit.dpo.arithmetic.Operand;
 import cvut.fit.dpo.arithmetic.elements.AddOperation;
 import cvut.fit.dpo.arithmetic.elements.ExpressionElement;
 
