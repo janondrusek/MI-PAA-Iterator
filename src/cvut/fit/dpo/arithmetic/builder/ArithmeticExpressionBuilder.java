@@ -14,22 +14,17 @@ public class ArithmeticExpressionBuilder implements Builder<ArithmeticExpression
 
 	private String[] tokens;
 
+	private OperandDirector director = new OperandDirector();
+
 	public ArithmeticExpressionBuilder(String[] tokens) {
 		this.tokens = tokens;
 	}
 
 	public ArithmeticExpression build() {
 		ArithmeticExpression expression = new ArithmeticExpression();
-		expression.setRoot(getBinaryOperatorDirector().getOperand());
+		expression.setRoot(getOperand(getBuilder()));
 
 		return expression;
-	}
-
-	private OperandDirector getBinaryOperatorDirector() {
-		OperandDirector director = new OperandDirector();
-		director.setBuilder(getBuilder());
-
-		return director;
 	}
 
 	private Builder<Operand> getBuilder() {
@@ -69,7 +64,8 @@ public class ArithmeticExpressionBuilder implements Builder<ArithmeticExpression
 	}
 
 	private Operand getOperand(Builder<Operand> builder) {
-		return builder.build();
+		director.setBuilder(builder);
+		return director.getOperand();
 	}
 
 	private boolean isNumeric(String token) {
