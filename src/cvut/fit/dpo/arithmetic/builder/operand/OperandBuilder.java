@@ -1,14 +1,15 @@
-package cvut.fit.dpo.arithmetic.builder;
+package cvut.fit.dpo.arithmetic.builder.operand;
 
+import cvut.fit.dpo.arithmetic.builder.Builder;
 import cvut.fit.dpo.arithmetic.operand.Operand;
 
-public abstract class BinaryOperatorBuilder implements Builder<Operand> {
+public abstract class OperandBuilder implements Builder<Operand> {
 
 	private Operand firstOperand;
 
 	private Operand secondOperand;
 
-	protected BinaryOperatorBuilder(Operand firstOperand, Operand secondOperand) {
+	protected OperandBuilder(Operand firstOperand, Operand secondOperand) {
 		this.firstOperand = firstOperand;
 		this.secondOperand = secondOperand;
 	}

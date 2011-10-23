@@ -1,8 +1,9 @@
-package cvut.fit.dpo.arithmetic.builder;
+package cvut.fit.dpo.arithmetic.builder.operand;
 
+import cvut.fit.dpo.arithmetic.builder.Builder;
 import cvut.fit.dpo.arithmetic.operand.Operand;
 
-public class BinaryOperatorDirector {
+public class OperandDirector {
 
 	private Builder<Operand> builder;
 
@@ -10,7 +11,7 @@ public class BinaryOperatorDirector {
 		this.builder = builder;
 	}
 
-	public Operand getBinaryOperator() {
+	public Operand getOperand() {
 		return builder.build();
 	}
 

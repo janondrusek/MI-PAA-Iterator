@@ -3,6 +3,10 @@ package cvut.fit.dpo.arithmetic.builder;
 import java.util.Stack;
 
 import cvut.fit.dpo.arithmetic.ArithmeticExpression;
+import cvut.fit.dpo.arithmetic.builder.operand.NumericOperandBuilder;
+import cvut.fit.dpo.arithmetic.builder.operand.OperandDirector;
+import cvut.fit.dpo.arithmetic.builder.operator.AddOperatorBuilder;
+import cvut.fit.dpo.arithmetic.builder.operator.SubtractOperatorBuilder;
 import cvut.fit.dpo.arithmetic.operand.Operand;
 import cvut.fit.dpo.pr2.StringPool;
 
@@ -16,13 +20,13 @@ public class ArithmeticExpressionBuilder implements Builder<ArithmeticExpression
 
 	public ArithmeticExpression build() {
 		ArithmeticExpression expression = new ArithmeticExpression();
-		expression.setRoot(getBinaryOperatorDirector().getBinaryOperator());
+		expression.setRoot(getBinaryOperatorDirector().getOperand());
 
 		return expression;
 	}
 
-	private BinaryOperatorDirector getBinaryOperatorDirector() {
-		BinaryOperatorDirector director = new BinaryOperatorDirector();
+	private OperandDirector getBinaryOperatorDirector() {
+		OperandDirector director = new OperandDirector();
 		director.setBuilder(getBuilder());
 
 		return director;
